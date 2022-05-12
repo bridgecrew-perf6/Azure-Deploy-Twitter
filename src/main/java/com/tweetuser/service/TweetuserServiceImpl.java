@@ -47,7 +47,7 @@ public class TweetuserServiceImpl implements TweetuserService {
 		// parent data
 		tweets.stream().filter(f -> f.getReference().isEmpty()).forEach(temp -> {
 			Map<String, Object> data = new HashMap<>();
-			if (temp.getReference().isBlank()) {
+			if (temp.getReference().isEmpty()) {
 				temp.setShowDate(this.formatDate(temp.getUpdatedDate()));
 				temp.setShowTime(this.formatTime(temp.getUpdatedDate()));
 				data.put("data", temp);
@@ -91,7 +91,7 @@ public class TweetuserServiceImpl implements TweetuserService {
 		// parent data
 		tweetsFinal.stream().filter(f -> f.getReference().isEmpty()).forEach(temp -> {
 			Map<String, Object> data = new HashMap<>();
-			if (temp.getReference().isBlank()) {
+			if (temp.getReference().isEmpty()) {
 				temp.setShowDate(this.formatDate(temp.getUpdatedDate()));
 				temp.setShowTime(this.formatTime(temp.getUpdatedDate()));
 				data.put("data", temp);
